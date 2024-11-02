@@ -1,5 +1,5 @@
 # ignore files in pycache directory
-*/__pycache__
+~/Alx_Django_Projects/week9/Alx_Django_Projects/LibraryProject/LibraryProject/__pycache__
 
 # ignore .sqlite3 file
 *.sqlite3
