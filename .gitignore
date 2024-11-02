@@ -1,0 +1,5 @@
+# ignore files in pycache directory
+*/__pycache__
+
+# ignore .sqlite3 file
+*.sqlite3
