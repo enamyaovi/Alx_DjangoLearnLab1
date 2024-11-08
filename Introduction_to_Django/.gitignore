@@ -1,0 +1,7 @@
+# Files to be ignored
+
+# Ignore the __pycache__ directory
+**/__pycache__
+
+# Ignore db.sqlite
+**/db.sqlite3
