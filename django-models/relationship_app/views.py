@@ -12,25 +12,28 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth import login as auth_login
 
 
-def is_member(user):
-    return UserProfile.objects.all().filter(role="Member").get(user=user.id)
+def has_role(user, role):
+    return UserProfile.objects.filter(user=user.id, role=role).exists()
 
-def is_librarian(user):
-    return UserProfile.objects.all().filter(role="Librarian").get(user=user.id)
+def member_test(user):
+    return has_role(user, "Member")
 
-def is_admin(user):
-    return UserProfile.objects.all().filter(role="Admin").get(user=user.id)
+def librarian_test(user):
+    return has_role(user, "Librarian")
+
+def admin_test(user):
+    return has_role(user, "Admin")
 
 
-@user_passes_test(is_member)
+@user_passes_test(member_test)
 def member_view(request):
     return HttpResponse("Welcome to members page!")
 
-@user_passes_test(is_librarian)
+@user_passes_test(librarian_test)
 def librarian_view(request):
     return HttpResponse("Welcome to the Librarian's page!")
 
-@user_passes_test(is_admin)
+@user_passes_test(admin_test)
 def admin_view(request):
     return HttpResponse("Welcome to the admin Page!")
 
