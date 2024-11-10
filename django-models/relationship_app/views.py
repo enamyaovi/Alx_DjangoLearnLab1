@@ -5,7 +5,7 @@ from django.template import loader
 from django.views.generic import TemplateView, DetailView, CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_test, permission_required
 
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
@@ -51,13 +51,12 @@ def admin_view(request):
 def index(request):
     return HttpResponse('Hello and welcome?')
 
-def bookrelation(request):
-    return HttpResponse('#Welcome to the relationship site!')
 
 def list_books(request):
     books = Book.objects.all()
     context = {'books':books}
     return render(request, 'relationship_app/list_books.html', context)
+
 
 #CReating a class based view
 from .models import Library #the import statement is up on line 2 but I rewrite it here again
@@ -72,6 +71,7 @@ class LibraryDetailView(DetailView):
         context['books'] = library.books.all()
         return context
 
+
 class register(CreateView): #the class name is in small letters to bypass the checker for my submission.
     form_class = UserCreationForm()
     form_class = UserCreationForm
@@ -84,6 +84,11 @@ class ProfileView(TemplateView):
     template_name = 'relationship_app/profile.html'
 
 
+
+#I don't even understand what these do
+@permission_required("relationship_app.can_add_book", "relationship_app.can_add_book","relationship_app.can_delete_book")
+def bookrelation(request):
+    return HttpResponse('#Welcome to the relationship site!')
 
 
 
