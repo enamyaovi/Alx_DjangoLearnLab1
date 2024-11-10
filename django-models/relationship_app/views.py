@@ -38,7 +38,7 @@ def librarian_view(request):
 #     return HttpResponse("Welcome to the admin Page!")
 
 @user_passes_test(admin_test)
-def admin_view(request):
+def admin(request):
     template = 'relationship_app/admin.html'
     return render(request, template_name=template)
 
