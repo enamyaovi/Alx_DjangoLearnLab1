@@ -10,7 +10,7 @@ author_name = myauthor.name
 # author_books = Book.objects.all().filter(author__name=author_name)
 
 author = Author.objects.get(name=author_name) #this line of code was not necessary but for the checker I write to pass the test
-author_books = Books.objects.all().filter(author=author)
+author_books = Books.objects.filter(author=author)
 for book in author_books:
     print(f"{book.title}")
 
