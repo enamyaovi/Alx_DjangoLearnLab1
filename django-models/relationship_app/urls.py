@@ -6,6 +6,9 @@ from .views import list_books, LibraryDetailView
 
 urlpatterns = [
     path("relations/", views.bookrelation, name='bookrelation'),
+    path("add_book/", views.bookrelation, name='add_book'),
+    path("delete_book/", views.bookrelation, name='delete_book'),
+    path("edit_book/", views.bookrelation, name='edit_book'),
     path('', views.index, name='index'),
     path('listbooks/',views.list_books, name='listbooks'),
     path('librarydetail/<int:pk>/', views.LibraryDetailView.as_view(), name='librarydetailview'),
