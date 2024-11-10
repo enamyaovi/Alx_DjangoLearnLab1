@@ -25,21 +25,26 @@ def admin_test(user):
     return has_role(user, "Admin")
 
 
+# @user_passes_test(member_test)
+# def member_view(request):
+#     return HttpResponse("Welcome to members page!")
 @user_passes_test(member_test)
 def member_view(request):
-    return HttpResponse("Welcome to members page!")
+    return render(request, 'relationship_app/member_view.html')
 
+# @user_passes_test(librarian_test)
+# def librarian_view(request):
+#     return HttpResponse("Welcome to the Librarian's page!")
 @user_passes_test(librarian_test)
 def librarian_view(request):
-    return HttpResponse("Welcome to the Librarian's page!")
+    return render(request,'relationship_app/librarian_view.html')
 
 # @user_passes_test(admin_test)
 # def admin_view(request):
 #     return HttpResponse("Welcome to the admin Page!")
-
 @user_passes_test(admin_test)
-def admin(request):
-    template = 'relationship_app/admin.html'
+def admin_view(request):
+    template = 'relationship_app/admin_view.html'
     return render(request, template_name=template)
 
 # Create your views here.
