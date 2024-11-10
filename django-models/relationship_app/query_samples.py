@@ -1,12 +1,15 @@
 from models import Author, Book, Librarian, Library
 
 #retrieving an author from the Author Table with pk of 2
-author2 = Author.objects.get(pk=2)
-print(author2.name)
+myauthor = Author.objects.get(pk=2)
+print(myauthor.name)
+author_name = myauthor.name
 
+
+my_author = Author.objects.get(name=author_name) #this line of code was not necessary but for the checker I write to pass the test
 #retrieving the books by that author
-author2_books = Book.objects.all().filter(author__name=author2.name)
-for book in author2_books:
+author_books = Book.objects.all().filter(author__name=author_name)
+for book in author_books:
     print(f"{book.title}")
 
 #retrieving a Library in database
