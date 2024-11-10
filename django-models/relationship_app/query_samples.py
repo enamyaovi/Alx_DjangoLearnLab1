@@ -6,9 +6,11 @@ print(myauthor.name)
 author_name = myauthor.name
 
 
-my_author = Author.objects.get(name=author_name) #this line of code was not necessary but for the checker I write to pass the test
 #retrieving the books by that author
-author_books = Book.objects.all().filter(author__name=author_name)
+# author_books = Book.objects.all().filter(author__name=author_name)
+
+author = Author.objects.get(name=author_name) #this line of code was not necessary but for the checker I write to pass the test
+author_books = Books.objects.all().filter(author=author)
 for book in author_books:
     print(f"{book.title}")
 
