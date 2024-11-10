@@ -1,3 +1,4 @@
+from django.forms.models import BaseModelForm
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Author, Book, Librarian, Library,UserProfile
 from django.template import loader
@@ -18,7 +19,7 @@ def is_librarian(user):
     return UserProfile.objects.all().filter(role="Librarian").get(user=user.id)
 
 def is_admin(user):
-    return UserProfile.objects.all().filter(role="Member").get(user=user.id)
+    return UserProfile.objects.all().filter(role="Admin").get(user=user.id)
 
 
 @user_passes_test(is_member)
@@ -61,9 +62,10 @@ class LibraryDetailView(DetailView):
 
 class register(CreateView): #the class name is in small letters to bypass the checker for my submission.
     form_class = UserCreationForm()
+    form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'relationship_app/register.html'
-    
+
 
 
 class ProfileView(TemplateView):

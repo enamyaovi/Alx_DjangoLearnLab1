@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, Book, Librarian, Library
+from .models import Author, Book, Librarian, Library, UserProfile
 
 # Define a custom admin class to control how models appear in the admin interface
 class RelationAdmin(admin.ModelAdmin):
@@ -30,3 +30,8 @@ class LibrarianAdmin(RelationAdmin):
 class LibraryAdmin(RelationAdmin):
     list_display = ('name',)
     search_fields = ('name', 'books')
+
+@admin.register(UserProfile)
+class UserProfileAdmin(RelationAdmin):
+    list_display = ("role", "user")
+    list_filter = ('role',)

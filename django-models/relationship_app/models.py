@@ -85,7 +85,7 @@ class UserProfile(models.Model):
         librarian = "Librarian"
         member = "Member"
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofiles')
     role = models.CharField(max_length=20, choices=Roles, default=Roles.member)
 
     def __str__(self) -> str:
