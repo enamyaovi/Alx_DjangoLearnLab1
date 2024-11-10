@@ -89,6 +89,7 @@ class ProfileView(TemplateView):
 from django.contrib.auth.decorators import permission_required
 @permission_required("relationship_app.can_add_book", "relationship_app.can_add_book","relationship_app.can_delete_book")
 def bookrelation(request):
+    permission = ("relationship_app.can_add_book", "relationship_app.can_add_book","relationship_app.can_delete_book")
     return HttpResponse('#Welcome to the relationship site!')
 
 
