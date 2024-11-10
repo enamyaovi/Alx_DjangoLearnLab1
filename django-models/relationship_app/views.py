@@ -51,6 +51,7 @@ def booklist(request):
     return render(request, 'relationship_app/list_books.html', context)
 
 #CReating a class based view
+from .models import Library #the import statement is up on line 2 but I rewrite it here again
 class LibraryDetail(DetailView):
     model = Library
     template_name = 'relationship_app/library_detail.html'
