@@ -23,5 +23,7 @@ mylibrary_books = mylibrary.books.all()
 for book in mylibrary_books:
     print(f"Book: '{book.title}', written by: {book.author}")
 
+mylibrarian = Librarian.objects.get(library=mylibrary)
+
 #retrieving the Librarian at mylibrary
-print(f"{mylibrary.librarian.name} works at {mylibrary.name}")
+# print(f"{mylibrary.librarian.name} works at {mylibrary.name}")
