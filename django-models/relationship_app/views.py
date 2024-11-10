@@ -22,15 +22,15 @@ def is_admin(user):
 
 
 @user_passes_test(is_member)
-def MemberView(request):
+def member_view(request):
     return HttpResponse("Welcome to members page!")
 
 @user_passes_test(is_librarian)
-def LibrarianView(request):
+def librarian_view(request):
     return HttpResponse("Welcome to the Librarian's page!")
 
 @user_passes_test(is_admin)
-def AdminView(request):
+def admin_view(request):
     return HttpResponse("Welcome to the admin Page!")
 
 
