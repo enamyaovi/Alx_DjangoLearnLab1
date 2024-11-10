@@ -26,15 +26,15 @@ def admin_test(user):
 
 
 @user_passes_test(member_test)
-def member_view(request):
+def MemberView(request):
     return HttpResponse("Welcome to members page!")
 
 @user_passes_test(librarian_test)
-def librarian_view(request):
+def LibrarianView(request):
     return HttpResponse("Welcome to the Librarian's page!")
 
 @user_passes_test(admin_test)
-def admin_view(request):
+def AdminView(request):
     return HttpResponse("Welcome to the admin Page!")
 
 
