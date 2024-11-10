@@ -15,5 +15,5 @@ urlpatterns = [
     path('profile/',views.ProfileView.as_view(),name='profile'),
     path('members/', views.MemberView, name='members'),
     path('librarian/', views.LibrarianView, name='librarian'),
-    path('admin/', views.AdminView, name="adminview") 
+    path('admin/', views.Admin, name="admin") 
 ]
