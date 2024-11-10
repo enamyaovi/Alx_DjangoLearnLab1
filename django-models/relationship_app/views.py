@@ -34,7 +34,7 @@ def LibrarianView(request):
     return HttpResponse("Welcome to the Librarian's page!")
 
 @user_passes_test(admin_test)
-def AdminView(request):
+def Admin(request):
     return HttpResponse("Welcome to the admin Page!")
 
 
