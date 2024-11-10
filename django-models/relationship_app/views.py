@@ -41,7 +41,7 @@ def index(request):
 def bookrelation(request):
     return HttpResponse('#Welcome to the relationship site!')
 
-def booklist(request):
+def list_books(request):
     books = Book.objects.all()
     context = {'books':books}
     return render(request, 'relationship_app/list_books.html', context)
@@ -49,7 +49,7 @@ def booklist(request):
 #CReating a class based view
 from .models import Library #the import statement is up on line 2 but I rewrite it here again
 from django.views.generic.detail import DetailView
-class LibraryDetail(DetailView):
+class LibraryDetailView(DetailView):
     model = Library
     template_name = 'relationship_app/library_detail.html'
 
