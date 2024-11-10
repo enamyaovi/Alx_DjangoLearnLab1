@@ -60,7 +60,7 @@ class LibraryDetailView(DetailView):
         return context
 
 class register(CreateView): #the class name is in small letters to bypass the checker for my submission.
-    form_class = UserCreationForm
+    form_class = UserCreationForm()
     success_url = reverse_lazy('login')
     template_name = 'relationship_app/register.html'
     
