@@ -33,10 +33,14 @@ def member_view(request):
 def librarian_view(request):
     return HttpResponse("Welcome to the Librarian's page!")
 
+# @user_passes_test(admin_test)
+# def admin_view(request):
+#     return HttpResponse("Welcome to the admin Page!")
+
 @user_passes_test(admin_test)
 def admin_view(request):
-    return HttpResponse("Welcome to the admin Page!")
-
+    template = 'relationship_app/admin.html'
+    return render(request, template_name=template)
 
 # Create your views here.
 def index(request):
