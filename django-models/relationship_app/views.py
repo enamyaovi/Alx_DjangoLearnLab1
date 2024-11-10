@@ -34,10 +34,6 @@ def AdminView(request):
     return HttpResponse("Welcome to the admin Page!")
 
 
-
-
-
-
 # Create your views here.
 def index(request):
     return HttpResponse('Hello and welcome?')
@@ -52,6 +48,7 @@ def booklist(request):
 
 #CReating a class based view
 from .models import Library #the import statement is up on line 2 but I rewrite it here again
+from django.views.generic.detail import DetailView
 class LibraryDetail(DetailView):
     model = Library
     template_name = 'relationship_app/library_detail.html'
