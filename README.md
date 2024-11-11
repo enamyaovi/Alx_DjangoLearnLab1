@@ -9,8 +9,8 @@ For now, this is a general overview of my Django projects.
 Each weekly project will be described in detail within its respective directory and README file.
 
 About This Week's Project:
-This week's project can be found in the LibraryProject directory. 
-If you're interested in the details, please check out the README file inside that folder.
+This week's project overview can be found in the LibraryProject directory. 
+If you're interested in the details, please checkout the README file inside that folder.
 
 Additionally, you'll find a list of dependencies required for the virtual environment in the requirements.txt file.
 
