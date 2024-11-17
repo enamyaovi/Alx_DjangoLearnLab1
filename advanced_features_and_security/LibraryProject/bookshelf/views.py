@@ -63,6 +63,7 @@ class BookReviewView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     template_name = 'bookshelf/form_example.html'
     success_url = reverse_lazy('booklist')  
     permission_required = 'bookshelf.review_book'
+    raise_exception = True
 
     def form_valid(self, form):
         """
