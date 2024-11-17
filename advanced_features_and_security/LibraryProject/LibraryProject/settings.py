@@ -154,6 +154,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Include subdomains in HSTS
 SECURE_HSTS_PRELOAD = True  # Allow site to be preloaded by browsers
+SECURE_PROXY_SSL_HEADER = "HTTP_X_FORWARDED_PROTO"
 
 
 #csp settings
