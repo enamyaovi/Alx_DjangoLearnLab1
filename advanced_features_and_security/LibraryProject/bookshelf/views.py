@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.views.generic.edit import CreateView
 
 from .models import Book, Review
-from .forms import BookReviewForm
+from .forms import ExampleForm
 
 """
 Views for the Book application.
@@ -53,13 +53,13 @@ class BookReviewView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
 
     Attributes:
         model: The model associated with the form (Review).
-        form_class: The form class to use for this view (BookReviewForm).
+        form_class: The form class to use for this view (ExampleForm).
         template_name: The template to render the form.
         success_url: The URL to redirect to after successful form submission.
         permission_required: The permission required to access this view.
     """
     model = Review
-    form_class = BookReviewForm
+    form_class = ExampleForm
     template_name = 'bookshelf/form_example.html'
     success_url = reverse_lazy('booklist')  
     permission_required = 'bookshelf.review_book'

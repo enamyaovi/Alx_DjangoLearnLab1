@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
-class BookReviewForm(forms.ModelForm):
+class ExampleForm(forms.ModelForm):
     """
     A form for submitting reviews on books.
 
