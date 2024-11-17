@@ -61,7 +61,8 @@ class Review(models.Model):
         return f"Review for {self.book.title} by {self.user.username}"
 
 # Custom user manager
-class CustomUserManager(UserManager):
+from django.contrib.auth.models import BaseUserManager
+class CustomUserManager(BaseUserManager):
     """
     Custom manager for the CustomUser model.
 
