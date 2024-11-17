@@ -88,6 +88,6 @@ class CustomUser(AbstractUser):
         db_table = 'auth_user'
 
     date_of_birth = models.DateField(blank=True, null=True)
-    profile_pic = models.ImageField(upload_to='profile_pics/')
+    profile_photo = models.ImageField(upload_to='profile_pics/')
     objects = CustomUserManager()
 
